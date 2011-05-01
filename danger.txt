@@ -1,0 +1,58 @@
+it is dangerous to go alone
+	here take this spaceship and space crew
+	go on a space adventure
+	space fruit
+	capture space fruit to use as slaves to work in the space mines
+
+minigames:
+	on planet: lemmings
+	in space: shmup
+	on ship: sims
+	
+space crew
+	captain - choose item
+		hero unit / items:
+			laser pistol
+			
+	engineer - build tool
+		helps others move around
+	navigator - jetpack
+		gets to unreachable places / escape
+	gunnery master - rocket launcher
+		destroys walls / propels red
+	redshirt - can't die
+		no damage from weapons/wyldlyfe
+	ship chef - food
+		attracts wyldlyfe
+	space philosopher - revive
+		brings back people who might need to fall to get somewhere
+		
+planet minigame
+		"captain it is dangerous to go alone, take this: " + planet start menu
+			items / characters / level preview
+	lemmings influence
+	worms also
+	control one character at a time
+	puzzle element
+	retrieve any valuable resources
+		fuel
+		food
+		settlement info
+		
+space minigame
+	shmuper
+	tyrian
+	space fruit
+	asteroids
+	aliens
+	hit planets to planet minigame
+	
+ship minigame
+	when?
+	remove this?
+	yes
+	maybe optional
+	menu system
+		continue
+		status
+		quit
