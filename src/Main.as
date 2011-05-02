@@ -14,6 +14,7 @@ package
 		public function Main():void
 		{
 			super(256, 256, MenuState, 2);
+			forceDebugger = true;
 		}
 	}
 }

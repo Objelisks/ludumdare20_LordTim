@@ -54,13 +54,19 @@ package
 		public function onShipHit(obj1:Object, obj2:Object):void
 		{
 			this.flicker(0.2);
-			if (obj1 is Ship)
+			if (obj2 is Ship)
+			{
+				var temp:Object = obj2;
+				obj2 = obj1;
+				obj1 = temp;
+			}
+			if (obj2 is Asteroid)
 			{
 				obj2.kill();
 			}
-			else
+			else if (obj2 is Planet)
 			{
-				obj1.kill();
+				FlxG.switchState(new PlanetState());
 			}
 		}
 		

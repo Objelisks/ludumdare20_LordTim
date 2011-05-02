@@ -13,24 +13,30 @@ package
 		public var enemyBullets:FlxGroup;
 		public var enemies:FlxGroup;
 		public var explosions:FlxGroup;
+		public var planets:FlxGroup;
 		
 		public var nesteroid:Number;
+		public var nextplanet:Number;
 		
 		override public function create():void
 		{
 			super.create();
 			ship = new Ship(FlxG.width / 2, FlxG.height - 20, this);
-			add(ship);
+			planets = new FlxGroup();
 			enemies = new FlxGroup();
 			playerBullets = new FlxGroup();
 			enemyBullets = new FlxGroup();
 			explosions = new FlxGroup();
+			
+			add(planets);
 			add(enemies);
 			add(playerBullets);
 			add(enemyBullets);
 			add(explosions);
+			add(ship);
 			
 			nesteroid = getTimer() + Math.random()*100+100;
+			nextplanet = getTimer() + Math.random()*100+15000;
 		}
 		
 		override public function update():void
@@ -39,11 +45,17 @@ package
 			FlxG.collide(playerBullets, enemies, onBulletHit);
 			FlxG.collide(ship, enemyBullets);
 			FlxG.collide(ship, enemies, ship.onShipHit);
+			FlxG.collide(ship, planets, ship.onShipHit);
 			
 			if (getTimer() > nesteroid)
 			{
 				enemies.add(new Asteroid(Math.random() * (FlxG.width - 20) + 10, -50, this));
 				nesteroid = getTimer() + Math.random()*100+100;
+			}
+			if (getTimer() > nextplanet)
+			{
+				planets.add(new Planet(Math.random() * (FlxG.width - 200) + 100, -200));
+				nextplanet = getTimer() + Math.random()*100+15000;
 			}
 		}
 		

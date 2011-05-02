@@ -23,6 +23,7 @@ package
 		override public function kill():void
 		{
 			super.kill();
+			FlxG.play(Assets.explosion_snd, Math.random()*0.4+0.6);
 			var explosion:Explosion = new Explosion(x, y, 1);
 			world.addExplosion(explosion);
 		}

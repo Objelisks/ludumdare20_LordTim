@@ -12,7 +12,7 @@ package
 		public var title2:FlxText;
 		public var title3:FlxText;
 		
-		public var goBtn:FlxButton;
+		public var goBtn:FlxText;
 		
 		public override function create():void
 		{
@@ -29,16 +29,18 @@ package
 			add(title2);
 			add(title3);
 			
-			goBtn = new FlxButton(FlxG.width - 100, FlxG.height - 32, "GO INTO SPACE", function():void
-			{
-				FlxG.switchState(new IntroState());
-			});
+			goBtn = new FlxText(FlxG.width - 100, FlxG.height - 32, 100, "GO INTO SPACE");
 			add(goBtn);
 		}
 		
 		public override function update():void
 		{
 			super.update();
+			if (FlxG.keys.justPressed("X"))
+			{
+				FlxG.switchState(new IntroState());
+			}
+			
 			if (title1.x > 100)
 			{
 				title1.velocity.x = 0;
